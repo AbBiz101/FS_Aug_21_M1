@@ -122,7 +122,7 @@ numbers between 0 and 10.
 */
 const giveMeRandom = function (x) {
   let randnum = [];
-  if (typeof x == "number" && x != 0) {
+  if (typeof x == "number") {
     for (let i = 0; i < x; i++) randnum.push(Math.floor(Math.random() * x));
   }
   return randnum;
@@ -135,6 +135,7 @@ Write a function "checkArray" which receives an array of random numbers (created
 and prints, for each item, whether it's bigger than 5.
 The function returns the sum of the numbers bigger than 5.
 */
+const checkArray = function () {};
 
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a 
@@ -142,6 +143,21 @@ number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
 
+let shoppingCart = [
+  { name: "object 1", id: " AS2002", price: 20, quantity: 3 },
+  { name: "object 2", id: " AS2003", price: 10, quantity: 2 },
+  { name: "object 3", id: " AS2004", price: 25, quantity: 8 },
+  { name: "object 4", id: " AS2005", price: 100, quantity: 1 },
+];
+
+const shippingCartTotal = function (x) {
+  let y;
+  for (let i = 0; i < x.length; i++) {
+    y = price.x[i] * quantity.x[i];
+  }
+  return y;
+};
+//console.log(shippingCartTotal(...shoppingCart));
 /* EXERCISE 13
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
 of objects with a price, a name, an id and the quantity to be shipped.
@@ -184,6 +200,17 @@ string emailContent, and returns a boolean.
 Check if the email is valid using string methods. The email (in this example) is valid if the 
 words SPAM and SCAM does not appear.
 */
+
+const antispam = function (array) {
+  let x = "";
+  if (x.includes("SPAM") || x.includes("SPAM")) {
+    return false;
+  } else {
+    true;
+  }
+};
+x = "bgtjsjkkaljjdnd";
+console.log(antispam("bgtjsjkkaljjdnd"));
 
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes 
