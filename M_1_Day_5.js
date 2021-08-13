@@ -97,6 +97,8 @@ console.log(check3and7(30));
 Write a function "reverseString" to programmatically reverse a given string 
 (es.: Strive => evirtS).
 */
+
+"Hello" // 5 // 0, 1, 2, 3, 4
 function xreverseString(str) {
   var newString = "";
   for (var i = str.length - 1; i >= 0; i--) {
@@ -123,7 +125,7 @@ numbers between 0 and 10.
 const giveMeRandom = function (x) {
   let randnum = [];
   if (typeof x == "number") {
-    for (let i = 0; i < x; i++) randnum.push(Math.floor(Math.random() * x));
+    for (let i = 0; i < x; i++) randnum.push(Math.round(Math.random() * x));
   }
   return randnum;
 };
