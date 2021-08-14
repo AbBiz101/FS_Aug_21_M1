@@ -110,7 +110,7 @@ Write a function "upperFirst" to capitalize the first letter of each word of a g
 as a parameter.
 */
 const str =
-  "capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
+  "SCAM capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
 const upperFirst = function (str) {
   let x = str.toLocaleLowerCase();
   let y = x.split(" ");
@@ -188,7 +188,6 @@ Create a function "addToShoppingCart" which receives a new object, adds it to sh
 returns the total number of items in the shoppingCart.
 */
 
-
 /* EXERCISE 14
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
 of objects with a price, a name, an id and the quantity to be shipped.
@@ -242,17 +241,15 @@ string emailContent, and returns a boolean.
 Check if the email is valid using string methods. The email (in this example) is valid if the 
 words SPAM and SCAM does not appear.
 */
+const xxx =
+  "SCAM capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
 
-const antispam = function (array) {
-  let x = "";
-  if (x.includes("SPAM") || x.includes("SPAM")) {
-    return false;
-  } else {
-    true;
-  }
-};
-x = "bgtjsjkkaljjdnd";
-//console.log(antispam("bgtjsjkkaljjdnd"));
+const antispam = (str) =>
+  str.includes("SPAM") || str.includes("SCAM")
+    ? console.log("This email is a scam")
+    : console.log("This email is not a scam");
+
+console.log(antispam(xxx));
 
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes 
