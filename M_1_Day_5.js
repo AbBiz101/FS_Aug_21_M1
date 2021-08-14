@@ -44,7 +44,6 @@ console.log(crazyDiff(22));
 Write a function "boundary" which accept an integer n and returns true if n is within 20 and 
 100 (included) or if it's equal to 400.
 */
-
 const boundary = function (n) {
   if (typeof n == "number") {
     if ((n <= 100 && n >= 20) || n === 400) {
@@ -97,8 +96,6 @@ console.log(check3and7(30));
 Write a function "reverseString" to programmatically reverse a given string 
 (es.: Strive => evirtS).
 */
-
-"Hello" // 5 // 0, 1, 2, 3, 4
 function xreverseString(str) {
   var newString = "";
   for (var i = str.length - 1; i >= 0; i--) {
@@ -106,17 +103,39 @@ function xreverseString(str) {
   }
   return newString;
 }
-console.log(xreverseString("hello"));
+console.log(xreverseString("hello Strive"));
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed
 as a parameter.
 */
+const str =
+  "capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
+const upperFirst = function (str) {
+  let x = str.toLocaleLowerCase();
+  let y = x.split(" ");
+  let z = [];
+  for (let i = 0; i < y.length; i++) {
+    z.push(y[i][0].toUpperCase() + y[i].slice(1));
+  }
+  return z.join(" ");
+};
+console.log(upperFirst(str));
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a 
 given string.
 */
+const cutString = function (str) {
+  let x = str.split(" ");
+  //console.log(x.length);
+  let y = [];
+  for (let i = 0; i < x.length; i++) {
+    y.push(x[i].slice(1, x[i].length - 2));
+  }
+  return y.join(" ");
+};
+console.log(cutString(str));
 
 /* EXERCISE 10
 Write a function "giveMeRandom" which accepts a number n and returns an array containing n random 
@@ -130,8 +149,8 @@ const giveMeRandom = function (x) {
   return randnum;
 };
 console.log(giveMeRandom(9));
-////// Extra
 
+/////////////////Extra//////////////////////////
 /* EXERCISE 11
 Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) 
 and prints, for each item, whether it's bigger than 5.
@@ -144,22 +163,24 @@ In your eCommerce you have an array of objects called shoppingCart. In this arra
 number of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "shippingCartTotal" which calculates the total due to the shop.
 */
-
 let shoppingCart = [
   { name: "object 1", id: " AS2002", price: 20, quantity: 3 },
   { name: "object 2", id: " AS2003", price: 10, quantity: 2 },
   { name: "object 3", id: " AS2004", price: 25, quantity: 8 },
-  { name: "object 4", id: " AS2005", price: 100, quantity: 1 },
+  { name: "object 4", id: " AS2005", price: 10, quantity: 1 },
+  { name: "object 5", id: " AS2006", price: 15, quantity: 12 },
+  { name: "object 6", id: " AS2007", price: 20, quantity: 13 },
+  { name: "object 7", id: " AS2008", price: 40, quantity: 10 },
 ];
-
 const shippingCartTotal = function (x) {
-  let y;
+  let total = 0;
   for (let i = 0; i < x.length; i++) {
-    y = price.x[i] * quantity.x[i];
+    total += x[i]?.price * x[i]?.quantity;
   }
-  return y;
+  return total;
 };
-//console.log(shippingCartTotal(...shoppingCart));
+console.log(`Total amount is ${shippingCartTotal(shoppingCart)}€.`);
+
 /* EXERCISE 13
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
 of objects with a price, a name, an id and the quantity to be shipped.
@@ -167,12 +188,23 @@ Create a function "addToShoppingCart" which receives a new object, adds it to sh
 returns the total number of items in the shoppingCart.
 */
 
+
 /* EXERCISE 14
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
 of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most 
 expensive item in the array.
 */
+const maxShoppingCart = function (x) {
+  let total = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (total < x[i]?.price) {
+      total = x[i]?.price;
+    }
+  }
+  return total;
+};
+console.log(`${maxShoppingCart(shoppingCart)}€.`);
 
 /* EXERCISE 15
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
@@ -180,6 +212,14 @@ of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "latestShoppingCart" which receives the shoppingCart array and returns the last 
 item.
 */
+const latestShoppingCart = function (x) {
+  let total;
+  for (let i = 0; i < x.length; i++) {
+    total = x[x.length - 1]?.name;
+  }
+  return total;
+};
+console.log(`${latestShoppingCart(shoppingCart)} is the last item.`);
 
 /* EXERCISE 16
 Create a function "loopUntil" which receives an integer x between 0 and 9.
@@ -212,7 +252,7 @@ const antispam = function (array) {
   }
 };
 x = "bgtjsjkkaljjdnd";
-console.log(antispam("bgtjsjkkaljjdnd"));
+//console.log(antispam("bgtjsjkkaljjdnd"));
 
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes 
