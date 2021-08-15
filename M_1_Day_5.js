@@ -97,20 +97,27 @@ Write a function "reverseString" to programmatically reverse a given string
 (es.: Strive => evirtS).
 */
 function xreverseString(str) {
-  var newString = "";
-  for (var i = str.length - 1; i >= 0; i--) {
-    newString += str[i];
-  }
-  return newString;
+  let newstr = str.split("").reverse().join("");
+  console.log(newstr);
 }
-console.log(xreverseString("hello Strive"));
+xreverseString("Hello Strive");
+
+///////////////////or
+const strrev = (str) => {
+  let newstr = "";
+  for (let i = str.length; i >= 0; i--) {
+    newstr += str[i];
+  }
+  console.log(newstr);
+};
+strrev("Via Angelo Tavanti 23, Firenze, Italy");
 
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed
 as a parameter.
 */
 const str =
-  "SCAM capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
+  "capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
 const upperFirst = function (str) {
   let x = str.toLocaleLowerCase();
   let y = x.split(" ");
@@ -156,7 +163,17 @@ Write a function "checkArray" which receives an array of random numbers (created
 and prints, for each item, whether it's bigger than 5.
 The function returns the sum of the numbers bigger than 5.
 */
-const checkArray = function () {};
+/// need explanation
+const checkArray = function (n) {
+  return n.reduce(function (sum, num) {
+    if (num > 5) {
+      console.log(num + " is greater than 5");
+      return sum + num;
+    }
+    return sum;
+  }, 0);
+};
+console.log(checkArray([4, 5, 6, 7]));
 
 /* EXERCISE 12
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a 
@@ -187,6 +204,21 @@ of objects with a price, a name, an id and the quantity to be shipped.
 Create a function "addToShoppingCart" which receives a new object, adds it to shoppingCart and 
 returns the total number of items in the shoppingCart.
 */
+const addToShoppingCart = function (
+  ObjectName,
+  objectID,
+  objectPrice,
+  objectQuantity
+) {
+  shoppingCart.push({
+    name: ObjectName,
+    id: objectID,
+    price: objectPrice,
+    quantity: objectQuantity,
+  });
+  console.log(shoppingCart);
+};
+addToShoppingCart("aaa", "fff", 23, 45);
 
 /* EXERCISE 14
 In your eCommerce you have an array of objects called shoppingCart. In this array you have a number 
@@ -231,17 +263,41 @@ Write a function "average" which receives an array and return the average value.
 automatically skips non-numeric entries in the array.
 */
 
+let collection = ["a", 10, 8, 0, 6, 5, 7, 3, 5, 1, 6];
+const average = function (x) {
+  let nums = [];
+  let sum = 0;
+  for (let i = 0; i < x.length; i++) {
+    if (typeof x[i] === "number") {
+      nums.push(x);
+      sum += x[i];
+    }
+  }
+  return sum / nums.length;
+};
+console.log(average(collection));
 /* EXERCISE 18
 Write a function "longest" to find the longest string from an given array of strings.
 */
+const longest = function (arr) {
+  let longstr = "";
+  let newstr = arr.split(" ");
+  for (let i = 0; i < newstr.length; i++) {
+    if (longstr.length < newstr[i].length) {
+      longstr = newstr[i];
+    }
+  }
+  console.log(longstr);
+};
+longest("function to create a inthisexampleisvalid very simple");
 
 /* EXERCISE 19
 Write a function to create a very simple anti spam filter for your mailbox. The function takes a 
 string emailContent, and returns a boolean.
-Check if the email is valid using string methods. The email (in this example) is valid if the 
+Check if the email is valid using string methods. The email (inthisexampleisvalid) isvalid if the 
 words SPAM and SCAM does not appear.
 */
-const xxx =
+const tXT =
   "SCAM capitalize the first leTTer of each wOrd oF a giVen sTRing PASSED.";
 
 const antispam = (str) =>
@@ -249,7 +305,7 @@ const antispam = (str) =>
     ? console.log("This email is a scam")
     : console.log("This email is not a scam");
 
-console.log(antispam(xxx));
+antispam(tXT);
 
 /* EXERCISE 20
 Write a function that receives a date d as parameter and calculates the number of days passes 
