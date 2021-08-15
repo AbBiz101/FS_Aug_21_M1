@@ -320,3 +320,14 @@ Ex.: X = 3, Y = 2
 ["00","01","02"
 "10","11","12"]
 */
+const matrixGenerator = function (x, y) {
+  let matrix = [];
+  for (let i = 0; i < x; i++) {
+    matrix[i] = [i];
+    for (let j = 0; j < y; j++) {
+      matrix[i][j] = `${i}${j}`;
+    }
+  }
+  console.log(matrix);
+};
+matrixGenerator(5, 5);
