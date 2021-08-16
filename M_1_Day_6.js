@@ -91,16 +91,20 @@ deleteOne("it should return the string without the first letter", false);
    Ex.: onlyLetters("I have 4 dogs")  => returns "I have  dogs"
 */
 function onlyLetters(x) {
-  let str = x.split("");
+  let str = x.replace(/\d+/g, "");
+  console.log(str);
+}
+/*
   let newstr = [];
   for (i = 0; i < str.length; i++) {
-    if (typeof str[i] !== "number") {
+    if (typeof parseInt(str[i]) === NaN) {
       newstr.push(str[i]);
-    }
-  }
-  console.log(newstr);
-}
+    } }
+  console.log(newstr.join(''));
+  */
+
 onlyLetters("I have 4 dogs");
+console.log(parseInt("7"));
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if 
@@ -139,7 +143,8 @@ Example: RollTheDices(3) => returns {
     values: [3, 3, 4]
 }
 */
-
+function rollTheDices() {}
+dice;
 /* Ex.9
 Write a function called "howManyDays" which receives a date as a parameter and should return the 
 number of days passed since that date.
