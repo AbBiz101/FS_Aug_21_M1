@@ -94,15 +94,6 @@ function onlyLetters(x) {
   let str = x.replace(/\d+/g, "");
   console.log(str);
 }
-/*
-  let newstr = [];
-  for (i = 0; i < str.length; i++) {
-    if (typeof parseInt(str[i]) === NaN) {
-      newstr.push(str[i]);
-    } }
-  console.log(newstr.join(''));
-  */
-
 onlyLetters("I have 4 dogs");
 
 /* Ex.6 
@@ -142,23 +133,24 @@ Example: RollTheDices(3) => returns {
     values: [3, 3, 4]
 }
 */
-function rollTheDices(number) {
-  let array = [];
-  let sum = 0;
-  for (let i = 0; i < number; i++) {
-    array.push(Math.floor(Math.random() * 10));
-    sum += array[i];
-  }
-  var obj = {
-    sum: sum,
-    values: array,
-  };
-  console.log(obj);
-}
-rollTheDices(3);
+// function rollTheDices(number) {
+//   let array = [];
+//   let sum = 0;
+//   for (let i = 0; i < number; i++) {
+//     array.push(Math.floor(Math.random() * 10));
+//     sum += array[i];
+//   }
+//   var obj = {
+//     sum: sum,
+//     values: array,
+//   };
+//   console.log(obj);
+// }
+// rollTheDices(3);
 
-function rollTheDices() {}
-dice;
+// function rollTheDices() {}
+// dice;
+
 /* Ex.9
 Write a function called "howManyDays" which receives a date as a parameter and should return the 
 number of days passed since that date.
@@ -170,6 +162,7 @@ function howManyDays(date) {
   console.log(`${days} days has passed since ${date}`);
 }
 howManyDays("11/12/1980");
+
 /* Ex.10
 Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false
 otherwise.
@@ -304,15 +297,14 @@ const movies = [
   },
 ];
 
-
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns
     the given object after deleting its property named as the given string.
 */
 
 function deleteProp(x, y) {
-  let newObj = delete x.y;
-  console.log(newObj);
+  let delobj = delete x["y"];
+  console.log(delobj);
 }
 
 let obj = {
@@ -323,6 +315,7 @@ let obj = {
   Poster:
     "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
 };
+deleteProp(obj, "Title");
 
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end
@@ -334,7 +327,7 @@ let obj = {
     provided at the end of this file.
 */
 function countMovies(x) {
-  console.log(`${x.length + 1} movies`);
+  console.log(`${x.length} movies`);
 }
 
 /* Ex.14
@@ -352,40 +345,49 @@ onlyTheTitles(movies);
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this 
    millennium.
 */
-function onlyInThisMillennium(obj) {
-  let movieYear = [];
-  for (let i of obj) movieYear.push(Object.values(i.Year).join(""));
-  for (let i = 0; i < movieYear.length; i++) {
-    if (movieYear[i] >= 2000) {
-      console.log(movieYear[i]);
+const onlyInThisMillennium = function (x) {
+  let total = [];
+  for (let i = 0; i < x.length; i++) {
+    if (x[i]?.Year >= 2000) {
+      total.push(x[i]?.Title);
     }
   }
-}
+  console.log(new Set(total));
+};
 onlyInThisMillennium(movies);
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie 
     with the given id.
 */
-// function getMovieById (x) {
-//     if (Object.values(movies.Year)) {
-
-//     }
-//     for (Object.values(movies.Year) {
-//         console.log(Object.values(movies.Year));
-//     }
-// }
-
+function getMovieById() {
+  for (let i = 0; i < movies.length; i++) {
+    console.log(Object.values(movies.imdbID));
+  }
+}
+console.log(getMovieById(""));
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies 
     provided have been produced.
 */
-
+function sumAllTheYears(obj) {
+  let movieYear = [];
+  let yearSum = 0;
+  for (let i of obj) movieYear.push(Object.values(i.Year).join(""));
+  for (let i of movieYear) console.log(movieYear[i]);
+  console.log(yearSum);
+}
+sumAllTheYears(movies);
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the 
     movies which contain that string in the title.
 */
-
+function searchByTitle(x) {
+  if (Object.values(movies.Title).includes("x")) {
+    console.log(bject.values(movies.Title));
+  }
+}
+searchByTitle("Lord");
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an 
     object;this object should contain an array called "match", made by all the movies which contain 
@@ -424,13 +426,6 @@ halfTree(5);
    *** 
   *****
 */
-
-function tree(x) {
-  for (let i = 0; i <= x; i++) {
-    console.log("*".repeat(i));
-  }
-}
-tree(5);
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the 
