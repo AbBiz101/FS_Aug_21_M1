@@ -365,29 +365,31 @@ function getMovieById() {
     console.log(Object.values(movies.imdbID));
   }
 }
-console.log(getMovieById(""));
+
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies 
     provided have been produced.
 */
 function sumAllTheYears(obj) {
-  let movieYear = [];
-  let yearSum = 0;
-  for (let i of obj) movieYear.push(Object.values(i.Year).join(""));
-  for (let i of movieYear) console.log(movieYear[i]);
-  console.log(yearSum);
+  //let movieYear = Object.values(movies.Year).join("");
+  //console.log(movieYear);
+  //let yearSum = 0;
+  //for (let i of obj) movieYear.push(Object.values(i.Year).join(""));
+  //for (let i of movieYear) yearSum+= movieYear[i];
+  //console.log(yearSum);
 }
 sumAllTheYears(movies);
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the 
     movies which contain that string in the title.
 */
-function searchByTitle(x) {
-  if (Object.values(movies.Title).includes("x")) {
-    console.log(bject.values(movies.Title));
+const searchByTitle = function (string) {
+  if (movies[i].Title.includes(string)) {
+    return movies[i].Title;
   }
-}
-searchByTitle("Lord");
+};
+console.log("The");
+
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an 
     object;this object should contain an array called "match", made by all the movies which contain 
