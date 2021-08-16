@@ -302,8 +302,8 @@ const tXT =
 
 const antispam = (str) =>
   str.includes("SPAM") || str.includes("SCAM")
-    ? console.log("This email is a scam")
-    : console.log("This email is not a scam");
+    ? console.log("This email is a scam 😬")
+    : console.log("This email is not a scam 😁");
 
 antispam(tXT);
 
@@ -311,7 +311,19 @@ antispam(tXT);
 Write a function that receives a date d as parameter and calculates the number of days passes 
 since the d.
 */
-
+function dayCalc(date) {
+  let diff = new Date().getTime() - new Date(date).getTime();
+  let years = Math.floor((diff / 31536000000) % 365);
+  let month = Math.floor(diff / 2628000000) % 12;
+  let days = Math.floor(diff / 86400000) % 24;
+  let hr = Math.floor((diff / 3600000) % 24);
+  let min = Math.floor((diff / 60000) % 60);
+  let sec = Math.floor((diff / 1000) % 60);
+  console.log(
+    `${years} years, ${month} months, ${days} days, ${hr}:${min}:${sec} has passed since ${date}`
+  );
+}
+dayCalc("11/12/1980");
 /* 
 EXERCISE 21
 Write a function "matrixGenerator" that receives x and y as parameter. The result should be a 
