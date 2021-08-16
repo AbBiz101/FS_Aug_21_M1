@@ -104,7 +104,6 @@ function onlyLetters(x) {
   */
 
 onlyLetters("I have 4 dogs");
-console.log(parseInt("7"));
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if 
@@ -143,6 +142,21 @@ Example: RollTheDices(3) => returns {
     values: [3, 3, 4]
 }
 */
+function rollTheDices(number) {
+  let array = [];
+  let sum = 0;
+  for (let i = 0; i < number; i++) {
+    array.push(Math.floor(Math.random() * 10));
+    sum += array[i];
+  }
+  var obj = {
+    sum: sum,
+    values: array,
+  };
+  console.log(obj);
+}
+rollTheDices(3);
+
 function rollTheDices() {}
 dice;
 /* Ex.9
@@ -160,7 +174,18 @@ howManyDays("11/12/1980");
 Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false
 otherwise.
 */
-
+function isTodayMyBirthday(x) {
+  let bd = new Date(x).getDate();
+  let bm = new Date(x).getMonth();
+  let date = new Date().getDate();
+  let month = new Date().getMonth();
+  if (bd === date && bm === month) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+isTodayMyBirthday("08/17/1994");
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
 
@@ -168,6 +193,19 @@ otherwise.
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns
     the given object after deleting its property named as the given string.
 */
+
+function deleteProp(x, y) {
+  let newObj = delete x.y;
+  console.log(newObj);
+}
+let obj = {
+  Title: "Avengers: Endgame",
+  Year: "2019",
+  imdbID: "tt4154796",
+  Type: "movie",
+  Poster:
+    "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+};
 
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end
@@ -178,16 +216,30 @@ otherwise.
     Write a function called "countMovies" which returns the number of movies contained in the array 
     provided at the end of this file.
 */
+function countMovies(x) {
+  console.log(`${x.length + 1} movies`);
+}
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies 
     provided in the array at the end of the file.
 */
-
+function onlyTheTitles(obj) {
+  let movieTitle = [];
+  for (let i of obj) movieTitle.push(Object.values(i.Title).join(""));
+  console.log(movieTitle);
+}
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this 
    millennium.
 */
+// function onlyInThisMillennium(obj) {
+//   let movieTitle = [];
+//   for (let i=0; i<obj.length;i++){
+//       if (Object.values(i.Year)>=2000){movieTitle.push(Object.values(i.Title).join(""))}
+
+//   }
+//   console.log(movieTitle);
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie 
@@ -226,6 +278,12 @@ otherwise.
   **
   ***
 */
+function halfTree(x) {
+  for (let i = 0; i <= x; i++) {
+    console.log("*".repeat(i));
+  }
+}
+halfTree(5);
 
 /* Ex.22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with 
@@ -237,12 +295,18 @@ otherwise.
   *****
 */
 
+function tree(x) {
+  for (let i = 0; i <= x; i++) {
+    console.log("*".repeat(i));
+  }
+}
+tree(5);
+
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the 
   given number is a prime number.
 */
 
-/* This movies array is used throughout the exercises. Please don't change it :)  */
 const movies = [
   {
     Title: "The Lord of the Rings: The Fellowship of the Ring",
@@ -357,3 +421,5 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
+
+onlyTheTitles(movies);
