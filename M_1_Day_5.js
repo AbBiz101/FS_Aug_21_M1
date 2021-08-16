@@ -135,7 +135,6 @@ given string.
 */
 const cutString = function (str) {
   let x = str.split(" ");
-  //console.log(x.length);
   let y = [];
   for (let i = 0; i < x.length; i++) {
     y.push(x[i].slice(1, x[i].length - 2));
