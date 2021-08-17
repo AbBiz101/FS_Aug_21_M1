@@ -10,20 +10,63 @@
       sizes="32*32"
     />
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: rgb(255, 247, 201);
+        font-family: Arial;
+        font-size: 20px;
+        padding: 50px;
+      }
+
+      h1 {
+        font-size: 35px;
+        margin-bottom: 25px;
+        color: rgb(15, 13, 13);
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      input,
+      button {
+        padding: 1px;
+        font-size: 16px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
       table,
       th,
       td {
         border: 1px solid black;
         align-items: center background-color rgba(62, 129, 65, 0.418);
       }
+
+      #tablePart {
+        background-color: rgb(200, 202, 207);
+      }
     </style>
   </head>
+
   <body>
     <div id="headPart">
-      <h1>shop name</h1>
+      <h1 id="firts change">shop name</h1>
+      <button type="button" onclick="h1txtchange()">Change-h1</button>
+      <button type="button" onclick="bodychange()">Change-body</button>
     </div>
 
     <div id="tablePart">
+      <h3>Product list</h3>
+      <button type="button" onclick="buttoncoloring()">Button Coloring</button>
       <table>
         <tr>
           <td>No.</td>
@@ -31,7 +74,7 @@
           <td>Product ID</td>
           <td>Product Price</td>
           <td>Product Image</td>
-          <td>Product description</td>
+          <td>Product</td>
         </tr>
 
         <tr>
@@ -39,17 +82,98 @@
           <td>iphone 12 (125GB)</td>
           <td>ADB210815</td>
           <td>700.00€</td>
-          <td border="3" height="100" width="100">
-            <img href="./images/favicon-32x32.png"/ >
+          <td><img src="./images/iphon 12.png" height="70" /></td>
+          <td>
+            <a
+              target="_blank"
+              href="https://www.amazon.de/MGJA3ZD-A-Apple-iPhone-12/dp/B08L5W8H9T/ref=sr_1_1_sspa?dchild=1&keywords=iphone+12&qid=1629203529&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzQzVCTlFOVjFXTjVWJmVuY3J5cHRlZElkPUEwNDExOTcyMVI2TDQ4NDQ5OVdWMiZlbmNyeXB0ZWRBZElkPUEwOTUyMzYxMjE3RERUSzdYSDZDRSZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="
+            >
+              <button id="product 1 button">Click hear</button></a
+            >
           </td>
-          <td>High quality</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>AOC Gaming Monitor 27inc</td>
+          <td>ADB210815</td>
+          <td>420.00€</td>
+          <td><img src="./images/im_2.jpg" height="70" /></td>
+          <td>
+            <a
+              target="_blank"
+              href="https://www.amazon.de/CU34G2X-BK-AOC-Gaming-Monitor/dp/B082VHT11B?ref_=ast_sto_dp&th=1&psc=1"
+              ><button id="product 2 button">Click hear</button></a
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>playstation 4</td>
+          <td>ADB210815</td>
+          <td>360.00€</td>
+          <td><img src="./images/im_3.jpg" height="70" /></td>
+          <td>
+            <a
+              target="_blank"
+              href="https://www.amazon.de/-/en/dp/B07HHPX4N1/ref=sr_1_1?dchild=1&keywords=playstation+4&qid=1629203889&sr=8-1"
+              ><button id="product 3 button">Click hear</button></a
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Samsung galaxy s21</td>
+          <td>ADB210815</td>
+          <td>1000.00€</td>
+          <td><img src="./images/im4.png" height="70" /></td>
+          <td>
+            <a
+              target="_blank"
+              href="https://www.amazon.de/Foldable-Contract-Internal-Lavender-Exclusive/dp/B099S48V7S/ref=sr_1_1_sspa?crid=388NPBVN7RTW2&dchild=1&keywords=samsung+galaxy+s21&qid=1629203946&sprefix=sam%2Caps%2C471&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzS1VHMzlLR083Rjc3JmVuY3J5cHRlZElkPUEwNDQ5NTAyMzFIVDg2NVQwMU8wSCZlbmNyeXB0ZWRBZElkPUEwNjgzMzg4M1MyVzdBSkQ3MlJSSyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="
+              ><button id="product 4 button">Click hear</button></a
+            >
+          </td>
         </tr>
       </table>
     </div>
-    <div id=""></div>
 
-    <h2></h2>
+    <div id="footerPart ">
+      <footer>
+        <p id="footerTxt">Owner: Abnet Nega<br /></p>
+        <a id="email" href="abnet@nega.com">abnet@nega.com<br /></a>
+        <p id="phonenumber"><br />Tell:- +251910896367<br /></p>
+      </footer>
+      <button type="button" onclick="footerchange()">Change-footer</button>
+    </div>
 
-    <script></script>
+    <div id="messageBoard"><input type="text" /> <button>Send</button></div>
+
+    <script lang="text/javascript">
+      let h1txtchange = function () {
+          document.getElementById("firts change").innerHTML = ('Electronic shop');
+          document.getElementById("firts change").style.color = "red";
+      }
+      let bodyElem;
+      let bodychange = function () {
+          if (bodyElem === undefined) {
+              document.querySelector("Body").style.backgroundColor = "green";
+          }
+      }
+      let footerchange = function () {
+          document.getElementById('email').innerText = "unknown@gmail.com ";
+          document.getElementById('footerTxt').innerText = "Owner:Public property";
+          document.getElementById('phonenumber').innerText = "No number available ";
+          footerElem = '3'
+      }
+      let buttoncoloring = function () {
+          document.getElementById('product 1 button').style.backgroundColor = 'pink'
+          document.getElementById('product 2 button').style.backgroundColor = 'blue'
+          document.getElementById('product 3 button').style.backgroundColor = 'red'
+          document.getElementById('product 4 button').style.backgroundColor = 'green'
+      }
+    </script>
   </body>
 </html>
