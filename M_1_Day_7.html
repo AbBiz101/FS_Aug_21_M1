@@ -191,56 +191,56 @@
 
     <script lang="text/javascript">
 
-      function getRandomRGB(){
-        let red= Math.abs(Math.random()*255)
-        let green= Math.abs(Math.random()*255)
-        let blue= Math.abs(Math.random()*255)
+      function getRandomRGB() {
+        let red = Math.abs(Math.random() * 255)
+        let green = Math.abs(Math.random() * 255)
+        let blue = Math.abs(Math.random() * 255)
         return `rgb(${red},${green},${blue})`
       }
-      let title=document.getElementById('firts change')
-        let h1txtchange = function () {
-          title.innerHTML = ('Elektronikgeschäft');
-          title.style.color = getRandomRGB();
-          title.style.fontSize = "35px";
-          title.style.fontFamily = "Times New Roman"
+      let title = document.getElementById('firts change')
+      let h1txtchange = function () {
+        title.innerHTML = ('Elektronikgeschäft');
+        title.style.color = getRandomRGB();
+        title.style.fontSize = "35px";
+        title.style.fontFamily = "Times New Roman"
+      }
+      let bodyElem;
+      let bodychange = function () {
+        if (bodyElem === undefined) {
+          document.querySelector("Body").style.backgroundColor = getRandomRGB();
         }
-        let bodyElem;
-        let bodychange = function () {
-          if (bodyElem === undefined) {
-            document.querySelector("Body").style.backgroundColor = getRandomRGB();
-          }
-        }
-        let footerchange = function () {
-          document.getElementById('email').innerText = "unknown@gmail.com ";
-          document.getElementById('footerTxt').innerText = "Owner:Public property";
-          document.getElementById('phonenumber').innerText = "No number available ";
-          footerElem = '3'
-        }
-        let buttoncoloring = function () {
-          document.getElementById('product 1 button').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 2 button').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 3 button').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 4 button').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 1 Price').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 2 Price').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 3 Price').style.backgroundColor = getRandomRGB()
-          document.getElementById('product 4 Price').style.backgroundColor = getRandomRGB()
-        }
-        let imagesizing1 = function () {
-          document.getElementById("product 1 image").style.transform = 'scale(4)'
-        }
-        let imagesizing2 = function () {
-          document.getElementById("product 2 image").style.transform = 'scale(4)'
-        }
-        let imagesizing3 = function () {
-          document.getElementById("product 3 image").style.transform = 'scale(4)'
-        }
-        let imagesizing4 = function () {
-          document.getElementById("product 4 image").style.transform = 'scale(4)'
-        }
-        function chanelink() {
-          document.querySelectorAll('a').classList.add
-        }
+      }
+      let footerchange = function () {
+        document.getElementById('email').innerText = "unknown@gmail.com ";
+        document.getElementById('footerTxt').innerText = "Owner:Public property";
+        document.getElementById('phonenumber').innerText = "No number available ";
+        footerElem = '3'
+      }
+      let buttoncoloring = function () {
+        document.getElementById('product 1 button').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 2 button').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 3 button').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 4 button').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 1 Price').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 2 Price').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 3 Price').style.backgroundColor = getRandomRGB()
+        document.getElementById('product 4 Price').style.backgroundColor = getRandomRGB()
+      }
+      let imagesizing1 = function () {
+        document.getElementById("product 1 image").style.transform = 'scale(4)'
+      }
+      let imagesizing2 = function () {
+        document.getElementById("product 2 image").style.transform = 'scale(4)'
+      }
+      let imagesizing3 = function () {
+        document.getElementById("product 3 image").style.transform = 'scale(4)'
+      }
+      let imagesizing4 = function () {
+        document.getElementById("product 4 image").style.transform = 'scale(4)'
+      }
+      function chanelink() {
+        document.querySelectorAll('a').classList.add
+      }
     </script>
   </body>
 </html>
