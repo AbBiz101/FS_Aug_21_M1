@@ -323,6 +323,7 @@ function dayCalc(date) {
   );
 }
 dayCalc("11/12/1980");
+
 /* 
 EXERCISE 21
 Write a function "matrixGenerator" that receives x and y as parameter. The result should be a 
