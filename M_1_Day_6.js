@@ -94,7 +94,17 @@ function onlyLetters(x) {
   let str = x.replace(/\d+/g, "");
   console.log(str);
 }
-onlyLetters("I have 4 dogs");
+////or
+function onlyletter(x) {
+  let str = "";
+  for (let i = 0; i < x.length; i++) {
+    if (isNaN(x[i])) {
+      str += x[i];
+    }
+  }
+  console.log(str);
+}
+onlyletter("I have 4 dogs");
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if 
@@ -133,23 +143,18 @@ Example: RollTheDices(3) => returns {
     values: [3, 3, 4]
 }
 */
-// function rollTheDices(number) {
-//   let array = [];
-//   let sum = 0;
-//   for (let i = 0; i < number; i++) {
-//     array.push(Math.floor(Math.random() * 10));
-//     sum += array[i];
-//   }
-//   var obj = {
-//     sum: sum,
-//     values: array,
-//   };
-//   console.log(obj);
-// }
-// rollTheDices(3);
-
-// function rollTheDices() {}
-// dice;
+function rollTheDices(number) {
+  let result = {
+    sum: 0,
+    val: [],
+  };
+  for (let i = 0; i < number; i++) {
+    result.sum += dice();
+    result.val.push(dice());
+  }
+  console.log(result);
+}
+rollTheDices(10);
 
 /* Ex.9
 Write a function called "howManyDays" which receives a date as a parameter and should return the 
@@ -178,8 +183,8 @@ function isTodayMyBirthday(x) {
     console.log(false);
   }
 }
-
 isTodayMyBirthday("08/17/1994");
+
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
 const movies = [
@@ -315,13 +320,13 @@ let obj = {
   Poster:
     "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
 };
-deleteProp(obj, "Title");
-
+delete obj.Title;
+console.log(obj);
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end
      of this file.
 */
-
+function olderMovie() {}
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array 
     provided at the end of this file.
@@ -334,13 +339,6 @@ function countMovies(x) {
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies 
     provided in the array at the end of the file.
 */
-function onlyTheTitles(obj) {
-  let movieTitle = [];
-  for (let i of obj) movieTitle.push(Object.values(i.Title).join(""));
-  console.log(movieTitle);
-}
-onlyTheTitles(movies);
-
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this 
    millennium.
@@ -424,10 +422,35 @@ halfTree(5);
   the given height.
   Example: 
   tree(3)
-    *  
-   *** 
-  *****
+     *  
+    *** 
+   *****
+  *******
 */
+
+function makeLayer(number) {
+  if (number === 0) return 1;
+  else return makeLayer(number - 1) + 2;
+}
+
+function makeTree(number) {
+  for (let i = 0; i <= number; i++) {
+    const layer = makeLayer(i);
+    let string = "";
+
+    for (let j = 0; j <= number; j++) {
+      string += " ";
+    }
+
+    for (let l = 0; l <= layer; l++) {
+      string += "*";
+    }
+    console.log(string);
+  }
+}
+
+console.log("here");
+makeTree(4);
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the 
@@ -437,13 +460,18 @@ halfTree(5);
 function isItPrime(x) {
   if (x < 2) {
     console.log(`${x} is not a prime number`);
+    return false;
   }
 
   for (let i = 2; i < x; i++) {
     if (x % i === 0) {
       console.log(`${x} is not a prime number`);
+      return false;
     }
   }
+
   console.log(`${x} is a prime number`);
+  return true;
 }
-isItPrime(13);
+
+console.log(isItPrime(52));
