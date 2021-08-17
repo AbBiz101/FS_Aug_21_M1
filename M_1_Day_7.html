@@ -16,6 +16,11 @@
         box-sizing: border-box;
       }
 
+      #headPart {
+        background-color: rgb(182, 79, 79);
+        text-align: justify;
+      }
+
       body {
         background-color: rgb(255, 247, 201);
         font-family: Arial;
@@ -53,6 +58,13 @@
 
       #tablePart {
         background-color: rgb(200, 202, 207);
+        text-align: center;
+        text-decoration-color: saddlebrown;
+      }
+
+      #headPart {
+        color: rgba(212, 19, 19, 0.555);
+        text-align: center;
       }
     </style>
   </head>
@@ -60,8 +72,8 @@
   <body>
     <div id="headPart">
       <h1 id="firts change">shop name</h1>
-      <button type="button" onclick="h1txtchange()">Change-h1</button>
-      <button type="button" onclick="bodychange()">Change-body</button>
+      <button id="bt2" type="button" onclick="h1txtchange()">Change-h1</button>
+      <button id="bt2" type="button" onclick="bodychange()">Change-body</button>
     </div>
 
     <div id="tablePart">
@@ -81,8 +93,12 @@
           <td>1</td>
           <td>iphone 12 (125GB)</td>
           <td>ADB210815</td>
-          <td>700.00€</td>
-          <td><img src="./images/iphon 12.png" height="70" /></td>
+          <td id="product 1 Price">700.00€</td>
+          <td>
+            <button id="product 1 image" type="button" onclick="imagesizing1()">
+              <img src="./images/iphon 12.png" height="70" />
+            </button>
+          </td>
           <td>
             <a
               target="_blank"
@@ -97,8 +113,12 @@
           <td>2</td>
           <td>AOC Gaming Monitor 27inc</td>
           <td>ADB210815</td>
-          <td>420.00€</td>
-          <td><img src="./images/im_2.jpg" height="70" /></td>
+          <td id="product 2 Price">420.00€</td>
+          <td>
+            <button id="product 2 image" type="button" onclick="imagesizing2()">
+              <img src="./images/im_2.jpg" height="70" />
+            </button>
+          </td>
           <td>
             <a
               target="_blank"
@@ -112,8 +132,12 @@
           <td>3</td>
           <td>playstation 4</td>
           <td>ADB210815</td>
-          <td>360.00€</td>
-          <td><img src="./images/im_3.jpg" height="70" /></td>
+          <td id="product 3 Price">360.00€</td>
+          <td>
+            <button id="product 3 image" type="button" onclick="imagesizing3()">
+              <img src="./images/im_3.jpg" height="70" />
+            </button>
+          </td>
           <td>
             <a
               target="_blank"
@@ -127,8 +151,12 @@
           <td>4</td>
           <td>Samsung galaxy s21</td>
           <td>ADB210815</td>
-          <td>1000.00€</td>
-          <td><img src="./images/im4.png" height="70" /></td>
+          <td id="product 4 Price">1000.00€</td>
+          <td>
+            <button id="product 4 image" type="button" onclick="imagesizing4()">
+              <img src="./images/im4.png" height="70" />
+            </button>
+          </td>
           <td>
             <a
               target="_blank"
@@ -154,12 +182,14 @@
     <script lang="text/javascript">
       let h1txtchange = function () {
           document.getElementById("firts change").innerHTML = ('Electronic shop');
-          document.getElementById("firts change").style.color = "red";
+          document.getElementById("firts change").style.color = "rgb(52, 134, 235)";
+          document.getElementById("firts change").style.fontSize = "80px";
+          document.getElementById("firts change").style.fontFamily = "Times New Roman"
       }
       let bodyElem;
       let bodychange = function () {
           if (bodyElem === undefined) {
-              document.querySelector("Body").style.backgroundColor = "green";
+              document.querySelector("Body").style.backgroundColor = "rgb(195, 208, 224)";
           }
       }
       let footerchange = function () {
@@ -169,10 +199,26 @@
           footerElem = '3'
       }
       let buttoncoloring = function () {
-          document.getElementById('product 1 button').style.backgroundColor = 'pink'
-          document.getElementById('product 2 button').style.backgroundColor = 'blue'
-          document.getElementById('product 3 button').style.backgroundColor = 'red'
-          document.getElementById('product 4 button').style.backgroundColor = 'green'
+          document.getElementById('product 1 button').style.backgroundColor = 'rgb(224, 195, 224)'
+          document.getElementById('product 2 button').style.backgroundColor = 'rgb(224, 72, 125)'
+          document.getElementById('product 3 button').style.backgroundColor = 'rgb(52, 235, 168)'
+          document.getElementById('product 4 button').style.backgroundColor = 'rgb(177, 66, 179)'
+          document.getElementById('product 1 Price').style.backgroundColor = 'rgb(52, 235, 168)'
+          document.getElementById('product 2 Price').style.backgroundColor = "rgb(189, 178, 60)"
+          document.getElementById('product 3 Price').style.backgroundColor = 'rgb(189, 64, 60)'
+          document.getElementById('product 4 Price').style.backgroundColor = 'rgb(84, 84, 72)'
+      }
+      let imagesizing1 = function () {
+          document.getElementById("product 1 image").style.transform = 'scale(4)'
+      }
+      let imagesizing2 = function () {
+          document.getElementById("product 2 image").style.transform = 'scale(4)'
+      }
+      let imagesizing3 = function () {
+          document.getElementById("product 3 image").style.transform = 'scale(4)'
+      }
+      let imagesizing4 = function () {
+          document.getElementById("product 4 image").style.transform = 'scale(4)'
       }
     </script>
   </body>
