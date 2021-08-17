@@ -10,37 +10,63 @@
       sizes="32*32"
     />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .red-bg > button {
-        background-color: red;
-      }
-
-      #headPart {
-        background-color: rgb(182, 79, 79);
-        text-align: justify;
-      }
-
       body {
-        background-color: rgb(255, 247, 201);
-        font-family: Arial;
-        font-size: 20px;
-        padding: 50px;
+        padding: 0px;
+        margin: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      table {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        border-collapse: collapse;
+        width: 1000px;
+        height: 200px;
+        border: 1px solid #bdc3c7;
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2),
+          -1px -1px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        position: absolute;
+        left: 8%;
+        top: 60%;
+      }
+
+      tr {
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      #bt2 {
+        align-content: center;
+        padding: 8px 10px;
+        background-color: #16a085;
+        color: #fff;
       }
 
       h1 {
-        font-size: 35px;
-        margin-bottom: 25px;
-        color: rgb(15, 13, 13);
+        font-weight: 600;
+        text-align: center;
+        background-color: #16a085;
+        color: #fff;
+        padding: 10px 0px;
       }
 
-      h2 {
-        margin-bottom: 20px;
-        text-align: center;
+      tr:hover {
+        background-color: #64dac2;
+        transform: scale(1.02);
+        box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2),
+          -1px -1px 8px rgba(0, 0, 0, 0.2);
       }
 
       input,
@@ -52,49 +78,34 @@
       p {
         margin-bottom: 20px;
       }
-
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        align-items: center background-color rgba(62, 129, 65, 0.418);
-      }
-
-      #tablePart {
-        background-color: rgb(200, 202, 207);
-        text-align: center;
-        text-decoration-color: saddlebrown;
-      }
-
-      #headPart {
-        color: rgba(212, 19, 19, 0.555);
-        text-align: center;
-      }
     </style>
   </head>
 
   <body>
     <div id="headPart">
-      <h1 id="firts change">shop name</h1>
+      <h1 id="firts change">Electronic shop</h1>
       <button id="bt2" type="button" onclick="h1txtchange()">Change-h1</button>
       <button id="bt2" type="button" onclick="bodychange()">Change-body</button>
+      <button id="bt2" type="button" onclick="footerchange()">
+        Change-footer
+      </button>
+      <button id="bt2" type="button" onclick="buttoncoloring()">
+        Button Coloring
+      </button>
     </div>
 
     <div id="tablePart">
-      <h3>Product list</h3>
-      <button type="button" onclick="buttoncoloring()">Button Coloring</button>
+      <h1 id="">Product list</h1>
       <table>
-        <tr>
-          <td>No.</td>
-          <td>Product Name</td>
-          <td>Product ID</td>
-          <td>Product Price</td>
-          <td>Product Image</td>
-          <td>Product</td>
+        <tr id="header">
+          <th>Product Name</th>
+          <th>Product ID</th>
+          <th>Product Price</th>
+          <th>Product Image</th>
+          <th>Product</th>
         </tr>
 
         <tr>
-          <td>1</td>
           <td>iphone 12 (125GB)</td>
           <td>ADB210815</td>
           <td id="product 1 Price">700.00€</td>
@@ -114,7 +125,6 @@
         </tr>
 
         <tr>
-          <td>2</td>
           <td>AOC Gaming Monitor 27inc</td>
           <td>ADB210815</td>
           <td id="product 2 Price">420.00€</td>
@@ -133,7 +143,6 @@
         </tr>
 
         <tr>
-          <td>3</td>
           <td>playstation 4</td>
           <td>ADB210815</td>
           <td id="product 3 Price">360.00€</td>
@@ -152,7 +161,6 @@
         </tr>
 
         <tr>
-          <td>4</td>
           <td>Samsung galaxy s21</td>
           <td>ADB210815</td>
           <td id="product 4 Price">1000.00€</td>
@@ -176,59 +184,63 @@
       <footer>
         <p id="footerTxt">Owner: Abnet Nega<br /></p>
         <a id="email" href="abnet@nega.com">abnet@nega.com<br /></a>
-        <p id="phonenumber"><br />Tell:- +251910896367<br /></p>
+        <p id="phonenumber"><br />Tell:- +12345678<br /></p>
+        <textarea name="textarea" id="" cols="20" rows="7"></textarea>
       </footer>
-      <button type="button" onclick="footerchange()">Change-footer</button>
     </div>
-
-    <div id="messageBoard">
-      <input type="text" placeholder="Your message here" />
-      <button>Send</button>
-    </div>
-
-    <button onclick="addClassToLinks()">Add class to links</button>
 
     <script lang="text/javascript">
-      let h1txtchange = function () {
-          title.innerHTML = ('Electronic shop');
-          title.style.color = "rgb(52, 134, 235)";
-          title.style.fontSize = "80px";
+
+      function getRandomRGB(){
+        let red= Math.abs(Math.random()*255)
+        let green= Math.abs(Math.random()*255)
+        let blue= Math.abs(Math.random()*255)
+        return `rgb(${red},${green},${blue})`
+      }
+      let title=document.getElementById('firts change')
+        let h1txtchange = function () {
+          title.innerHTML = ('Elektronikgeschäft');
+          title.style.color = getRandomRGB();
+          title.style.fontSize = "35px";
           title.style.fontFamily = "Times New Roman"
-      }
-      let bodyElem;
-      let bodychange = function () {
+        }
+        let bodyElem;
+        let bodychange = function () {
           if (bodyElem === undefined) {
-              document.querySelector("Body").style.backgroundColor = "rgb(195, 208, 224)";
+            document.querySelector("Body").style.backgroundColor = getRandomRGB();
           }
-      }
-      let footerchange = function () {
+        }
+        let footerchange = function () {
           document.getElementById('email').innerText = "unknown@gmail.com ";
           document.getElementById('footerTxt').innerText = "Owner:Public property";
           document.getElementById('phonenumber').innerText = "No number available ";
           footerElem = '3'
-      }
-      let buttoncoloring = function () {
-          document.getElementById('product 1 button').style.backgroundColor = 'rgb(224, 195, 224)'
-          document.getElementById('product 2 button').style.backgroundColor = 'rgb(224, 72, 125)'
-          document.getElementById('product 3 button').style.backgroundColor = 'rgb(52, 235, 168)'
-          document.getElementById('product 4 button').style.backgroundColor = 'rgb(177, 66, 179)'
-          document.getElementById('product 1 Price').style.backgroundColor = 'rgb(52, 235, 168)'
-          document.getElementById('product 2 Price').style.backgroundColor = "rgb(189, 178, 60)"
-          document.getElementById('product 3 Price').style.backgroundColor = 'rgb(189, 64, 60)'
-          document.getElementById('product 4 Price').style.backgroundColor = 'rgb(84, 84, 72)'
-      }
-      let imagesizing1 = function () {
+        }
+        let buttoncoloring = function () {
+          document.getElementById('product 1 button').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 2 button').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 3 button').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 4 button').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 1 Price').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 2 Price').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 3 Price').style.backgroundColor = getRandomRGB()
+          document.getElementById('product 4 Price').style.backgroundColor = getRandomRGB()
+        }
+        let imagesizing1 = function () {
           document.getElementById("product 1 image").style.transform = 'scale(4)'
-      }
-      let imagesizing2 = function () {
+        }
+        let imagesizing2 = function () {
           document.getElementById("product 2 image").style.transform = 'scale(4)'
-      }
-      let imagesizing3 = function () {
+        }
+        let imagesizing3 = function () {
           document.getElementById("product 3 image").style.transform = 'scale(4)'
-      }
-      let imagesizing4 = function () {
+        }
+        let imagesizing4 = function () {
           document.getElementById("product 4 image").style.transform = 'scale(4)'
-      }
+        }
+        function chanelink() {
+          document.querySelectorAll('a').classList.add
+        }
     </script>
   </body>
 </html>
