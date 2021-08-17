@@ -41,12 +41,8 @@ delete me.skills;
     Write a function called "dice"; it should randomize an integer number between 1 and 6.
 */
 
-function dice(n) {
-  let num;
-  if (n <= 6 || n >= 1) {
-    num = Math.floor(Math.random() * n);
-  }
-  console.log(num);
+function dice() {
+  return Math.floor(Math.random() * 6 + 1);
 }
 dice(5);
 
@@ -63,9 +59,9 @@ console.log(whoIsBigger(12, 6));
     Ex. splitMe("I love coding") => returns ["I", "Love", "Coding"]
 */
 function splitMe(x) {
-  console.log(x.split(" "));
+  return x.split(" ");
 }
-splitMe("I love coding");
+console.log(splitMe("I love coding"));
 
 /* Ex.4
     Write a function called "deleteOne" which receives a string and a boolean as parameters. If the 
@@ -82,9 +78,11 @@ function deleteOne(x, boolean) {
       newstr.push(str[i].slice(0, str[i].length - 1));
     }
   }
-  console.log(newstr.join(" "));
+  return newstr.join(" ");
 }
-deleteOne("it should return the string without the first letter", false);
+console.log(
+  deleteOne("it should return the string without the first letter", false)
+);
 /* Ex.5
    Write a function called "onlyLetters" which receives a string as a parameter and returns it removing
     all the digits.
@@ -92,7 +90,7 @@ deleteOne("it should return the string without the first letter", false);
 */
 function onlyLetters(x) {
   let str = x.replace(/\d+/g, "");
-  console.log(str);
+  return str;
 }
 ////or
 function onlyletter(x) {
@@ -102,9 +100,9 @@ function onlyletter(x) {
       str += x[i];
     }
   }
-  console.log(str);
+  return str;
 }
-onlyletter("I have 4 dogs");
+console.log(onlyletter("I have 4 dogs"));
 
 /* Ex.6 
    Write a function called "isThisAnEmail" which receives a string as a parameter and returns true if 
@@ -112,9 +110,9 @@ onlyletter("I have 4 dogs");
 */
 function isThisAnEmail(x) {
   const emailexp = /\S+@\S+\.\S+/;
-  console.log(emailexp.test(x));
+  return emailexp.test(x);
 }
-isThisAnEmail("a@gmail.com");
+console.log(isThisAnEmail("a@gmail.com"));
 
 /* Ex.7
    Write a function called "whatDayIsIt" that should return the current day of the week.
@@ -130,9 +128,10 @@ function whatDayIsIt() {
     "Friday",
     "Saturday",
   ];
-  console.log(weekdays[date]);
+  return weekdays[date];
 }
-whatDayIsIt();
+console.log(whatDayIsIt());
+
 /* Ex.8
 Write a function called "rollTheDices" which receives a number as a parameter.
 It should invoke the dice() function defined in Ex1 the specified amount of times,
@@ -149,12 +148,13 @@ function rollTheDices(number) {
     val: [],
   };
   for (let i = 0; i < number; i++) {
-    result.sum += dice();
-    result.val.push(dice());
+    let rolled = dice();
+    result.sum += rolled;
+    result.val.push(rolled);
   }
-  console.log(result);
+  return result;
 }
-rollTheDices(10);
+console.log(rollTheDices(10));
 
 /* Ex.9
 Write a function called "howManyDays" which receives a date as a parameter and should return the 
@@ -164,9 +164,9 @@ function howManyDays(date) {
   let days = Math.floor(
     (new Date().getTime() - new Date(date).getTime()) / 86400000
   );
-  console.log(`${days} days has passed since ${date}`);
+  return `${days} days has passed since ${date}`;
 }
-howManyDays("11/12/1980");
+console.log(howManyDays("11/12/1980"));
 
 /* Ex.10
 Write a function called "isTodayMyBirthday" which should return true if today's your birthday, false
@@ -178,12 +178,12 @@ function isTodayMyBirthday(x) {
   let date = new Date().getDate();
   let month = new Date().getMonth();
   if (bd === date && bm === month) {
-    console.log(true);
+    return true;
   } else {
-    console.log(false);
+    return false;
   }
 }
-isTodayMyBirthday("08/17/1994");
+console.log(isTodayMyBirthday("08/17/1994"));
 
 // JS Arrays // Objs
 // NOTE: movies array is defined at the end of this file!
@@ -301,6 +301,7 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
+console.log(movies[2].Year);
 
 /* Ex.11
    Write a function called "deleteProp" which receives an object and a string as parameters, and returns
@@ -308,8 +309,8 @@ const movies = [
 */
 
 function deleteProp(x, y) {
-  let delobj = delete x["y"];
-  console.log(delobj);
+  delete x[y];
+  return x;
 }
 
 let obj = {
@@ -320,87 +321,138 @@ let obj = {
   Poster:
     "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
 };
-delete obj.Title;
-console.log(obj);
+console.log(deleteProp(obj, "Title"));
+
 /* Ex.12 
     Write a function called "olderMovie" which finds the oldest movie in the array provided at the end
      of this file.
 */
-function olderMovie() {}
+function olderMovie() {
+  let result = { Year: 2000 };
+  for (let i = 0; i < movies.length; i++) {
+    let currentYear = parseInt(movies[i].Year);
+    if (currentYear < result.Year) {
+      result = movies[i];
+    }
+  }
+  return result;
+}
+console.log(olderMovie());
+
 /* Ex.13
     Write a function called "countMovies" which returns the number of movies contained in the array 
     provided at the end of this file.
 */
-function countMovies(x) {
-  console.log(`${x.length} movies`);
+function countMovies(movies) {
+  return movies.length;
 }
 
 /* Ex.14
     Write a function called "onlyTheTitles" which creates an array with just the titles of the movies 
     provided in the array at the end of the file.
 */
+function onlyTheTitles() {
+  let result = [];
+  for (let i = 0; i < movies.length; i++) {
+    result.push(movies[i].Title);
+  }
+  return result;
+}
+console.log(onlyTheTitles());
 /* Ex.15
    Write a function called "onlyInThisMillennium" which returns only the movies produced in this 
    millennium.
 */
-const onlyInThisMillennium = function (x) {
-  let total = [];
-  for (let i = 0; i < x.length; i++) {
-    if (x[i]?.Year >= 2000) {
-      total.push(x[i]?.Title);
+function onlyInThisMillennium(x) {
+  let Titles = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (parseInt(movies[i].Year) > 1999) {
+      Titles.push(movies[i].Title);
     }
   }
-  console.log(new Set(total));
-};
-onlyInThisMillennium(movies);
+  return Titles;
+}
+console.log(onlyInThisMillennium());
 
 /* Ex.16 
     Write a function called "getMovieById" which receives an id as a parameter and returns the movie 
     with the given id.
 */
-function getMovieById() {
+function getMovieById(id) {
   for (let i = 0; i < movies.length; i++) {
-    console.log(Object.values(movies.imdbID));
+    if (movies[i].imdbID === id) {
+      return movies[i];
+    }
+    return {};
   }
 }
+console.log(getMovieById("tt0120737"));
 
 /* Ex.17
     Write a function called "sumAllTheYears" which returns the sum of all the years in which the movies 
     provided have been produced.
 */
-function sumAllTheYears(obj) {
-  //let movieYear = Object.values(movies.Year).join("");
-  //console.log(movieYear);
-  //let yearSum = 0;
-  //for (let i of obj) movieYear.push(Object.values(i.Year).join(""));
-  //for (let i of movieYear) yearSum+= movieYear[i];
-  //console.log(yearSum);
+function sumAllTheYears() {
+  let yearsum = 0;
+  for (let i = 0; i < movies.length; i++) {
+    yearsum += parseInt(movies[i].Year);
+  }
+  return yearsum;
 }
-sumAllTheYears(movies);
+console.log(sumAllTheYears());
+
 /* Ex.18
     Write a function called "searchByTitle" which receives a string as a parameter and returns all the 
     movies which contain that string in the title.
 */
-const searchByTitle = function (string) {
-  if (movies[i].Title.includes(string)) {
-    return movies[i].Title;
+function searchByTitle(str) {
+  let Title = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(str) !== -1) {
+      Title.push(movies[i].Title);
+    }
   }
-};
-console.log("The");
+  return Title;
+}
+console.log(searchByTitle("Avengers"));
 
 /* Ex.19
     Write a function called "searchAndDivide" which receives a string as a parameter and returns an 
     object;this object should contain an array called "match", made by all the movies which contain 
     the given string in the title,and another array "unmatch" with all the remaining ones.
 */
+function searchAndDivide(str) {
+  let Title = {
+    match: [],
+    unmatch: [],
+  };
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.indexOf(str) !== -1) {
+      Title.match.push(movies[i].Title);
+    } else {
+      Title.unmatch.push(movies[i].Title);
+    }
+  }
+  return Title;
+}
+console.log(searchAndDivide("Avengers"));
 
 /* Ex.20
    Write a function called "removeIndex" which receives a number as a parameter and returns the movies 
    array without the element in the given position.
 */
+function removeIndex(x) {
+  let Title = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (i !== x) {
+      Title.push(movies[i]);
+    }
+  }
+  return Title;
+}
+console.log(removeIndex(2));
 
 // [EXTRAS] JS Advanced
-
 /* Ex.21
   Create a function called "halfTree" which receives a number as a parameter and builds an "*" half 
   tree with the given height.
@@ -428,29 +480,14 @@ halfTree(5);
   *******
 */
 
-function makeLayer(number) {
-  if (number === 0) return 1;
-  else return makeLayer(number - 1) + 2;
-}
-
-function makeTree(number) {
-  for (let i = 0; i <= number; i++) {
-    const layer = makeLayer(i);
-    let string = "";
-
-    for (let j = 0; j <= number; j++) {
-      string += " ";
-    }
-
-    for (let l = 0; l <= layer; l++) {
-      string += "*";
-    }
-    console.log(string);
+function tree(x) {
+  for (let i = 0; i <= x; i++) {
+    let star = "*".repeat(2 * i + 1);
+    let spaceing = " ".repeat(x - i - 1);
+    console.log(spaceing + star);
   }
 }
-
-console.log("here");
-makeTree(4);
+//tree(14);
 
 /* Ex.23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the 
@@ -458,20 +495,9 @@ makeTree(4);
 */
 
 function isItPrime(x) {
-  if (x < 2) {
-    console.log(`${x} is not a prime number`);
-    return false;
-  }
-
   for (let i = 2; i < x; i++) {
-    if (x % i === 0) {
-      console.log(`${x} is not a prime number`);
-      return false;
-    }
+    if (x % i === 0) return false;
   }
-
-  console.log(`${x} is a prime number`);
   return true;
 }
-
-console.log(isItPrime(52));
+console.log(isItPrime(51));
