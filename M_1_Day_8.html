@@ -132,7 +132,7 @@
         background-color: rgb(157, 226, 19);
         padding: 1%;
       }
-      .ach {
+      .a {
         background-color: rgb(10, 10, 10);
         padding: 1%;
         color: whitesmoke;
@@ -149,8 +149,7 @@
         background-color: violet;
       }
       .secondList {
-        background-color: rgb(238, 46, 12);
-        color: yellow;
+        display: none;
       }
       #firstDiv {
         background-color: rgb(224, 75, 113);
@@ -188,6 +187,9 @@
     <button onclick="changeUrls()">Url-change</button>
     <button onclick="paintItGreen()">Url-green</button>
     <button onclick="ULdisappear()">UL disappear</button>
+    <button onclick="newlist()">Add to the UL</button>
+    <button onclick="getnewart()">Get new Div text</button>
+    <button onclick="getnewtxt()">change div text</button>
     <header>
       <h1 onclick="h1editor()">This is the title of the page</h1>
       <h2 onclick="h2editor()">This is the subtitle of the page</h2>
@@ -207,16 +209,12 @@
         <li>2nd</li>
         <li>3rd</li>
       </ul>
-      <button onclick="newlist()">Add to the UL</button>
-      <button onclick="ULdisappear()">Delete from the UL</button>
 
       <a href="strive.school">This link goes to Strive School</a>
 
       <div id="firstDiv">
         <p>This text is just for the exercise</p>
       </div>
-      <button onclick="getnewtxt()">Get new text</button>
-      <button onclick="getnewart()">Get new P</button>
 
       <div id="secondDiv">
         <input
@@ -263,10 +261,14 @@
 
       function changeUrls() {
         const urlpart = document.querySelector("a");
-        urlpart.classList.toggle("ach");
+        urlpart.classList.toggle("a");
         urlpart.innerHTML = "I dont think so!";
         urlpart.href = "https://www.google.com";
         urlpart.target = "_blank";
+      }
+      function ULdisappear() {
+        const ulp = document.querySelector("#secondList");
+        ulp.classList.toggle("secondList");
       }
       function paintItGreen() {
         const urlpart = document.querySelector("a");
