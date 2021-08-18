@@ -1,36 +1,9 @@
 <html>
   <head>
     <script>
-      /* EXERCISE 3
-      Write a function for changing the text of only the p which are children of a div. div->p
-      */
-
-      // /* EXERCISE 5
-      //  Write a function for adding a new item in the second list.
-      //  */
-
-      // /* EXERCISE 6
-      // Write a function for adding a second paragraph to the div.
-      // */
-
-      // /* EXERCISE 7
-      // Write a function for making the first UL disappear.
-      // */
-
       // /* EXERCISE 11
       // Attach an event listener to the input field in the page for console logging its value just after any keystroke.
       // */
-
-      // const inputField = document.getElementById("input-field");
-      // // ...
-
-      // /* EXERCISE 12
-      // Create a new welcome alert message when the page successfully loads.
-      // */
-
-      // window.onload = function () {
-      //   //
-      // };
     </script>
 
     <style>
@@ -62,11 +35,11 @@
 
       a {
         background-color: rgb(157, 226, 19);
-        padding: 2%;
+        padding: 1%;
       }
       .ach {
         background-color: rgb(10, 10, 10);
-        padding: 1.5%;
+        padding: 1%;
         color: whitesmoke;
       }
       #firstList {
@@ -84,10 +57,9 @@
         background-color: rgb(238, 46, 12);
         color: yellow;
       }
-      .div-p {
-      }
-      div {
+      #firstDiv {
         background-color: rgb(224, 75, 113);
+        padding: 3%;
       }
       .firstDiv {
         background-color: yellow;
@@ -95,10 +67,15 @@
       .secondDiv {
         background-color: rgb(231, 16, 231);
       }
+      #input-field {
+        margin-top: 3%;
+        background-color: none;
+      }
       footer {
         background-color: rgb(230, 110, 89);
         padding: 1.2%;
         color: yellow;
+        margin-top: 1%;
       }
       .footer {
         background-color: rgb(10, 10, 10);
@@ -111,6 +88,7 @@
     <button onclick="makeItClickable()">Body-change</button>
     <button onclick="changeUrls()">Url-change</button>
     <button onclick="paintItGreen()">Url-green</button>
+    <button onclick="ULdisappear()">UL disappear</button>
     <header>
       <h1 onclick="h1editor()">This is the title of the page</h1>
       <h2 onclick="h2editor()">This is the subtitle of the page</h2>
@@ -130,12 +108,16 @@
         <li>2nd</li>
         <li>3rd</li>
       </ul>
+      <button onclick="newlist()">Add to the UL</button>
+      <button onclick="ULdisappear()">Delete from the UL</button>
 
       <a href="strive.school">This link goes to Strive School</a>
 
       <div id="firstDiv">
         <p>This text is just for the exercise</p>
       </div>
+      <button onclick="getnewtxt()">Get new text</button>
+      <button onclick="getnewart()">Get new P</button>
 
       <div id="secondDiv">
         <input
@@ -191,6 +173,28 @@
         const urlpart = document.querySelector("a");
         urlpart.style.backgroundColor = "green";
       }
+      function getnewtxt() {
+        const newtxt = document.querySelector("#firstDiv");
+        newtxt.innerHTML = "backgroundColor";
+      }
+      function getnewart() {
+        let newp = document.createElement("article");
+        let container = document.getElementById("firstDiv");
+        newp.innerHTML = " manually added text";
+        newp.style.color = "green";
+        newp.id = "new-art";
+        container.appendChild(newp);
+      }
+      function newlist() {
+        let newp = document.createElement("list");
+        let container = document.getElementById("firstList");
+        newp.innerHTML = "4th \n";
+        newp.style.color = "black";
+        container.appendChild(newp);
+      }
+      // window.onload = function () {
+      //   alert("Welcome to this test page.");
+      // };
     </script>
   </body>
 </html>
