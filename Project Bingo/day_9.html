@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bingo</title>
+    <style>
+      body {
+        background-color: rgb(94, 93, 93);
+        color: white;
+        display: inline;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      h1 {
+        background-color: rgb(146, 145, 145);
+        text-align: center;
+        font-weight: x-large;
+      }
+      #bingo-box {
+          background-color: rgb(49, 49, 141);
+         align-items: center;
+      }
+
+      #bingo-number {
+        background-color: #cf6161;
+        display: inline-block;
+        width: 10%;
+        min-height: 64px;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        border-radius: 8px;
+        margin: 3px;
+        padding-top: 32px;
+        cursor: pointer;
+      }
+      #number-generetor {
+          height: 50px;
+          width: 100px;
+          border-radius: 10px;
+          justify-content: center;
+          position: relative;
+
+      }
+
+      .bingo-val:hover {
+        border-color: gray;
+      }
+
+      .bingo-val.selected {
+        border-color: gray;
+        background-color: #444444;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bingo!!</h1>
+
+    <div id="bingo-box"></div>
+    <footer>
+            <button id="number-generetor"></button>
+    </footer>
+
+
+    <script>
+      let numberContainerNode = document.getElementById("bingo-box");
+      function numbering() {
+        for (let i = 1; i <= 76; i++) {
+          let numberNode = document.createElement("div");
+          numberNode.innerText = i;
+          numberNode.id = "bingo-number";
+          numberNode.classList.add("bingo-val");
+          numberContainerNode.appendChild(numberNode);
+        }
+      }
+      window.onload = function () {
+        numbering();
+      };
+    </script>
+  </body>
+</html>
+
+<!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+
+        EXTRA: 
+        - Take ALWAYS a new number (eg. avoid randoming the number 10 3 times)
+        - Create a USER BOARD with 24 randomized numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
