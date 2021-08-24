@@ -4,9 +4,167 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>QUIZ GAME!</title>
+    <style>
+      body {
+        background-color: rgb(122, 115, 115);
+        color: white;
+        display: inline;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+
+      .flexbox-question-header {
+        padding: 10px 10px;
+        border: 20px 40px;
+        position: relative;
+        display: flex;
+        grid-template-columns: 10fr
+      }
+      .Category,
+      .question-with-point {
+        display: inline-block;
+        width: 10%;
+        min-height: 64px;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        border-radius: 8px;
+        margin: 3px;
+        padding-top: 32px;
+        cursor: pointer;
+        margin-left: 4px;
+        border-radius: 8px;
+        background-color: rgba(27, 27, 27, 0.774);
+      }
+      .Category-1,
+      .Category-2,
+      .Category-3,
+      .Category-4 {
+        display: inline-block;
+        width: 15%;
+        min-height: 64px;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        border-radius: 8px;
+        margin: 3px;
+        padding-top: 32px;
+      }
+      .Category-1 {
+        background-color: #da6a6a;
+      }
+      .Category-2 {
+        background-color: #81cf4c;
+      }
+      .Category-3 {
+        background-color: #4187e2;
+      }
+      .Category-4 {
+        background-color: #e0cb54;
+      }
+      .question-with-point:hover {
+        border-color: gray;
+      }
+      .flexbox-contester-contenere {
+        position: le;
+        background-color: #c7365f;
+        opacity: 0.8;
+        border-radius: 9px;
+        color: #fff;
+        width: 15%;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.75s;
+        margin-bottom: 2%;
+      }
+
+      .flexbox-questions {
+        background-color: #161515;
+        display: inline-block;
+        width: 10%;
+        min-height: 64px;
+        text-align: center;
+        font-size: x-large;
+        font-weight: bold;
+        border-radius: 8px;
+        margin: 3px;
+        padding-top: 32px;
+        cursor: pointer;
+        margin-bottom: 2%;
+        margin-bottom: 2%;
+      }
+            .flexbox-quastion-contenere {
+        background-color: cadetblue;
+        padding: 2em;
+        display: grid;
+        grid-template-columns: 2fr;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="flexbox-quastion-contenere" id=" ">
+      <div class="flexbox-question-header" id="">
+        <h4 class="Category-1">Category 1</h4>
+        <h4 class="Category-2">Category 2</h4>
+        <h4 class="Category-3">Category 3</h4>
+        <h4 class="Category-4">Category 4</h4>
+      </div>
+      <div class="flexbox-questions-10pt">
+        <h3 class="question-with-point">10</h3>
+        <h3 class="question-with-point">10</h3>
+        <h3 class="question-with-point">10</h3>
+        <h3 class="question-with-point">10</h3>
+      </div>
+      <div class="flexbox-contester-contenere">
+        <div class="contester-1" id="qust-1">
+          <h3>Player 1</h3>
+          <h4>0</h4>
+        </div>
+        <div class="contester-2" id="qust-1">
+          <h3>Player 2</h3>
+          <h4>0</h4>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /*
+      .flexbox-quastion-contenere {
+        background-color: #c23232;
+        width: 75%;
+        height: 900px;
+        border-radius: 8px;
+        margin: 3px;
+        padding-top: 32px;
+        
+      }
+
+      <div class="flexbox-questions-20pt">
+        <h3 class="question-with-point">20</h3>
+        <h3 class="question-with-point">20</h3>
+        <h3 class="question-with-point">20</h3>
+        <h3 class="question-with-point">20</h3>
+      </div>
+      <div class="flexbox-questions-30pt">
+        <h3 class="question-with-point">30</h3>
+        <h3 class="question-with-point">30</h3>
+        <h3 class="question-with-point">30</h3>
+        <h3 class="question-with-point">30</h3>
+      </div>
+
+
+      .flexbox-contester-header {
+        background-color: #161515;
+        display: inline-block;
+        width: 200px;
+        border: 3px solid blanchedalmond;
+        cursor: pointer;
+      }
+      */
+    </script>
+  </body>
 </html>
 
 <!--
@@ -105,4 +263,31 @@
         48) Add a pink border to a cell when the mouse is over it
         49) Write a function to add a table with 4 rows and 3 columns programmatically
         50) Write a function to remove the table from the page
+-->
+
+<!--
+    WEEKEND EXERCISES!
+
+    EX1.: Create a header for the page
+    EX2.: Create a subtitle for the page
+    EX3.: Create a table with 4 rows and 5 columns (ID, Name, Surname, Age, Email)
+    EX4.: Add a link to a Facebook profile for each of the IDs
+    EX5.: Add a text input "textChange" for plain text
+    EX6.: Add a button next to "textChange", when pressed the title and the H1 of the page must be changed with the content of "textChange"
+    EX7.: When the button is pressed, if "textChange" is empty, alert the user with a message
+    EX8.: Add a new section with title "Enrolled Students"
+    EX9.: Add an empty UL or DIV inside this new section
+    EX10.: Add an extra column to the Table named "actions"
+    EX11.: Add a button in each "action cell" with a "+" sign. When the button is pressed a new line must appear inside the "UL / DIV" in the enrolled section list
+    EX12.: Add button for each item of the list. When pressed, the student is removed from the list. 
+    EX13.: Create a simple form with 5 fields: ID, Name, Surname, Age, Email
+    EX14.: Create a button "add students" which adds a new row to the table
+    EX15.: Add a "counter section" in which there is always the number of items in the List
+
+    EX16.: Add somewhere a button, on click, it changes the color of each item in the list in RED
+    EX17.: Add somewhere a button, on click, it counts the number of entry in the list and shows it in a newly created paragraph
+    EX18.: Add somewhere a button, on click, it swaps HEADER and Subtitle
+    EX19.: Add somewhere a button, on click, change the table background to a random color
+    EX20.: Add a "color picker" to the page, when the color changes, apply it to the header
+    EX21.: Add a dropdown (<select> tag), with your fav movies. When one is selected, change the heading of the page with the selected value
 -->
