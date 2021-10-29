@@ -501,3 +501,11 @@ function isItPrime(x) {
   return true;
 }
 console.log(isItPrime(51));
+
+
+
+function acronym(str) {
+	let x = str.split(' ');
+}
+
+console.log(25555);

@@ -1,170 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QUIZ GAME!</title>
-    <style>
-      body {
-        background-color: rgb(122, 115, 115);
-        color: white;
-        display: inline;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
 
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QUIZ GAME!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <style>
 
-      .flexbox-question-header {
-        padding: 10px 10px;
-        border: 20px 40px;
-        position: relative;
-        display: flex;
-        grid-template-columns: 10fr
-      }
-      .Category,
-      .question-with-point {
-        display: inline-block;
-        width: 10%;
-        min-height: 64px;
-        text-align: center;
-        font-size: x-large;
-        font-weight: bold;
-        border-radius: 8px;
-        margin: 3px;
-        padding-top: 32px;
-        cursor: pointer;
-        margin-left: 4px;
-        border-radius: 8px;
-        background-color: rgba(27, 27, 27, 0.774);
-      }
-      .Category-1,
-      .Category-2,
-      .Category-3,
-      .Category-4 {
-        display: inline-block;
-        width: 15%;
-        min-height: 64px;
-        text-align: center;
-        font-size: x-large;
-        font-weight: bold;
-        border-radius: 8px;
-        margin: 3px;
-        padding-top: 32px;
-      }
-      .Category-1 {
-        background-color: #da6a6a;
-      }
-      .Category-2 {
-        background-color: #81cf4c;
-      }
-      .Category-3 {
-        background-color: #4187e2;
-      }
-      .Category-4 {
-        background-color: #e0cb54;
-      }
-      .question-with-point:hover {
-        border-color: gray;
-      }
-      .flexbox-contester-contenere {
-        position: le;
-        background-color: #c7365f;
-        opacity: 0.8;
-        border-radius: 9px;
-        color: #fff;
-        width: 15%;
-        padding: 2rem;
-        text-align: center;
-        transition: all 0.75s;
-        margin-bottom: 2%;
-      }
-
-      .flexbox-questions {
-        background-color: #161515;
-        display: inline-block;
-        width: 10%;
-        min-height: 64px;
-        text-align: center;
-        font-size: x-large;
-        font-weight: bold;
-        border-radius: 8px;
-        margin: 3px;
-        padding-top: 32px;
-        cursor: pointer;
-        margin-bottom: 2%;
-        margin-bottom: 2%;
-      }
-            .flexbox-quastion-contenere {
-        background-color: cadetblue;
-        padding: 2em;
-        display: grid;
-        grid-template-columns: 2fr;
-      }
-    </style>
+  </style>
   </head>
-  <body>
-    <div class="flexbox-quastion-contenere" id=" ">
-      <div class="flexbox-question-header" id="">
-        <h4 class="Category-1">Category 1</h4>
-        <h4 class="Category-2">Category 2</h4>
-        <h4 class="Category-3">Category 3</h4>
-        <h4 class="Category-4">Category 4</h4>
-      </div>
-      <div class="flexbox-questions-10pt">
-        <h3 class="question-with-point">10</h3>
-        <h3 class="question-with-point">10</h3>
-        <h3 class="question-with-point">10</h3>
-        <h3 class="question-with-point">10</h3>
-      </div>
-      <div class="flexbox-contester-contenere">
-        <div class="contester-1" id="qust-1">
-          <h3>Player 1</h3>
-          <h4>0</h4>
-        </div>
-        <div class="contester-2" id="qust-1">
-          <h3>Player 2</h3>
-          <h4>0</h4>
-        </div>
-      </div>
-    </div>
+         <div class="table"> 
+            <h3>Academic experience.</h3>
+                <table>
+                    <tr>
+                        <td>Field of study study</td>
+                        <td>Level</td>
+                        <td>Year </td>
+                    </tr>
+            
+                    <tr>
+                        <td>architecture and urban planning</td>
+                        <td>BSc</td>
+                        <td>2016</td>
+                    </tr>
 
-    <script>
-      /*
-      .flexbox-quastion-contenere {
-        background-color: #c23232;
-        width: 75%;
-        height: 900px;
-        border-radius: 8px;
-        margin: 3px;
-        padding-top: 32px;
-        
-      }
+                    <tr>
+                        <td>Sustainable development</td>
+                        <td>MSc</td>
+                        <td>2018</td>
+                    </tr>
 
-      <div class="flexbox-questions-20pt">
-        <h3 class="question-with-point">20</h3>
-        <h3 class="question-with-point">20</h3>
-        <h3 class="question-with-point">20</h3>
-        <h3 class="question-with-point">20</h3>
-      </div>
-      <div class="flexbox-questions-30pt">
-        <h3 class="question-with-point">30</h3>
-        <h3 class="question-with-point">30</h3>
-        <h3 class="question-with-point">30</h3>
-        <h3 class="question-with-point">30</h3>
-      </div>
+                    <tr>
+                        <td>Geoinformatics</td>
+                        <td>MSc</td>
+                        <td>2021</td>
+                    </tr>
+                </table>
 
 
-      .flexbox-contester-header {
-        background-color: #161515;
-        display: inline-block;
-        width: 200px;
-        border: 3px solid blanchedalmond;
-        cursor: pointer;
-      }
-      */
-    </script>
-  </body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+
 </html>
 
 <!--

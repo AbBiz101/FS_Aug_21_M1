@@ -7,50 +7,58 @@
     <title>Document</title>
     <style>
       .contaner {
+        text-align: center;
         display: grid;
-        grid-gap: 10px;
-        border: 2px solid black;
+        grid-gap: 3px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+        grid-template-areas: "nav nav nav nav" 
+        "sidebar main main main" 
+        "sidebar content1 content2 content3" 
+        "sidebar footer footer footer";
       }
-      h1 {
-        position: relative;
-        left: 200px;
-        top: 50px;
+      nav {
+        background-color: blueviolet;
+        grid-area: nav;
       }
-      .did {
-          position: relative;
-          top: 50px;
-          left: 420px;
-          width: 380px;
+      main {
+        background-color: brown;
+        grid-area: main;
       }
-      .big-im {
-        position: relative;
-        left: 100px;
-        top: -50px;
+      #sidebar {
+        grid-area: sidebar;
+        background-color: burlywood;
       }
-      .contaner > div {
-        background-color: rgb(185, 151, 151);
+      .content1 {
+        grid-area:content1;
+        background-color: cadetblue;
       }
-      .contaner > div:nth-child(odd) {
-        background-color: rgb(209, 208, 208);
+      .content2 {
+        grid-area:content2;
+        background-color: cornflowerblue;
       }
-    </style>
+      .content3 {
+        grid-area:content3;
+        background-color: darkcyan;
+      }
+      footer {
+        grid-area: footer;
+        background-color: darkred;
+      }
+      </style>
   </head>
   <body>
     <div class="contaner">
-      <h1>Title</h1>
-      <div class="did">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-        minima odit, rem praesentium sint, dignissimos doloribus quisquam at,
-        mollitia ipsa quidem iste? Eum debitis distinctio repellendus recusandae
-        nesciunt nihil.
-      </div>
-      <img
-        class="big-im"
-        src="https://source.unsplash.com/random"
-        width="300px"
-      />
+      <nav>navbar</nav>
+      <main>Main</main>
+      <div id="sidebar">Sidebar</div>
+      <div class="content1">Content-1</div>
+      <div class="content2">Content-2</div>
+      <div class="content3">Content-3</div>
+      <footer>Footer</footer>
+      
       <!----
-      <div>
+        <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
         minima odit, ipsum rem praesentium sint, dignissimos doloribus quisquam
         at, mollitia ipsa quidem iste? Eum debitis distinctio repellendus
@@ -68,6 +76,12 @@
         at, mollitia ipsa quidem iste? Eum debitis distinctio repellendus
         recusandae nesciunt nihil.
       </div>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+        crossorigin="anonymous"
+      />
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
         minima odit, ipsum rem praesentium sint, dignissimos doloribus quisquam
@@ -107,24 +121,3 @@
     </div>
   </body>
 </html>
-
-<!--
-ASSIGNMENT TOPIC
-You are creating a website to showcase your favourite music albums.
-In this page you will have a short biography section of yourself, the top albums of your life, 
-the worst album you ever listened to and everything related to the music you love.
-
-ASSIGNMENT RULES
-- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
-- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
-- To test the page, open it with your browser and inspect it with developer tools / device emulator.
-- Use Bootstrap4.6 classes to create the page.
-- Use containers, rows and cols in order to achieve a great responsive layout.
-
-NOTE:
-Even the most experienced designers need inspiration.
-Spend some time surfing the web researching the best way of representing the albums you love.
-Could be the Amazon way, the Spotify or Apple music way or any other music collection out there.
-
-HINT: Manage your time in order to finish the structure and responsiveness before focusing on the details.
--->
